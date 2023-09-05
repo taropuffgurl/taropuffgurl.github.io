@@ -202,5 +202,41 @@
         <!-- <button id="takeAgain" style="display: none;" onclick="window.location.reload()"></button>  -->
     </div>
     <script src="./script.js"></script>
+    <footer>
+        <script>
+            function cookieSettings() {
+  let cookiePlacement = document.getElementById("cookie-policy")
+  let cookieSettingsBtn = document.createElement("button")
+  cookieSettingsBtn.setAttribute('id', 'ot-sdk-btn')
+  cookieSettingsBtn.setAttribute('class', 'ot-sdk-show-settings')
+  cookiePlacement.appendChild(cookieSettingsBtn)
+}
+
+function cookiePolicy() {
+  let cookiePlacement = document.getElementById("cookie-policy")
+  let cookiePolicy = document.createElement("a")
+  let cookiePolicyLink = document.createTextNode("Cookies")
+  cookiePolicy.appendChild(cookiePolicyLink)
+  cookiePolicy.title = "Cookies"
+  cookiePolicy.href = "https://www.spotify.com/legal/cookies-policy/"
+  cookiePolicy.setAttribute('class', ' ')
+  cookiePlacement.append(cookiePolicy)
+
+}
+
+document.querySelector('head').addEventListener('countryFunc', function (e) {
+
+  if (window.markerFunc() == 1) {
+
+    return cookieSettings()
+
+  } else {
+
+    return cookiePolicy()
+  }
+
+}, false);
+        </script>
+ </footer>
 </body>
 </html>
